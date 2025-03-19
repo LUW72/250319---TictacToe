@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+}
+
+main {
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin: 20px;
+}
+
+.mezok {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    width: 100%;
+}
+
+.mezok div {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4em;
+    background: #fff;
+    border: 2px solid #000;
+    cursor: pointer;
+}
+
+.mezok div:hover {
+    background: #f0f0f0;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .mezok div {
+        width: 80px;
+        height: 80px;
+    }
+}
