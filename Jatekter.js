@@ -1,5 +1,5 @@
 import Elem from "./Elem.js";
-
+import { NYEROLISTA } from "./Nyertes.js";
 
 export default class Jatekter
 {
@@ -34,20 +34,29 @@ export default class Jatekter
             this.szuloElem.innerHTML = "";
             this.megjelenit();
             kattintasSzamlalo++;
+            this.ellenorzes();
         });
     }
-    ellenorzes()
-    {
-/*         for (let i = 0; i < this.#lista.length; i++) 
-        {
-            let hely = this.#lista[i];
-            if (hely == "X" && hely+1)
+    ellenorzes() {
+        for (let i = 0; i < NYEROLISTA.length; i++) {
+
+            if (this.#lista[NYEROLISTA[i].elso] && this.#lista[NYEROLISTA[i].elso] === 
+                this.#lista[NYEROLISTA[i].masodik] && this.#lista[NYEROLISTA[i].elso] === this.#lista[NYEROLISTA[i].harmadik]) 
             {
                 
+                alert(`A nyertes: ${this.#lista[NYEROLISTA[i].elso]}`); 
+                this.szuloElem.innerHTML = "";
+                new Jatekter(this.szuloElem);
             }
-            
-        } */
+        }
+    
+        if (!this.#lista.includes("")) 
+        {
+            alert("Döntetlen!"); 
+        }
     }
+    
+    
 
     megjelenit()
     {
